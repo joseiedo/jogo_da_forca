@@ -126,10 +126,10 @@ function carregaImagemForca() {
   var img = document.querySelector("#forca");
   switch (tentativas) {
     case 5:
-      img.setAttribute("src", "/img/tentativa-1.svg");
+      img.setAttribute("src", "./img/tentativa-1.svg");
       break;
     case 4:
-      img.setAttribute("src", "/img/tentativa-2.svg");
+      img.setAttribute("src", "./img/tentativa-2.svg");
       break;
     case 3:
       img.setAttribute("src", "./img/tentativa-3.svg");

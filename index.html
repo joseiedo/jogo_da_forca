@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <title>Jogo da forca - José Iêdo</title>
+</head>
+
+<body>
+  <header>
+    <img class="logo-header" src="img/logoalura.svg" alt="Alura" />
+  </header>
+  <main>
+    <section class="menu-section">
+      <h1>Jogo da forca</h1>
+      <div class="botoes-home">
+        <button class="btn-primario btn-iniciar" onclick="goToGamePage()">
+          começar a jogar
+        </button>
+
+        <button class="btn-secundario btn-adicionar" onclick="goToNewWordPage()">
+          adicionar palavra
+        </button>
+      </div>
+    </section>
+    <section class="game-section hide">
+      <img id="forca" src="img/Vectorforca.svg" alt="forca" />
+      <div id="palavra-secreta">
+      </div>
+      <div id="teclado">
+        <div class="teclas">
+          <button id="tecla-A" onclick="verificaLetraEscolhida('A')">A</button>
+          <button id="tecla-B" onclick="verificaLetraEscolhida('B')">B</button>
+          <button id="tecla-C" onclick="verificaLetraEscolhida('C')">C</button>
+          <button id="tecla-D" onclick="verificaLetraEscolhida('D')">D</button>
+          <button id="tecla-E" onclick="verificaLetraEscolhida('E')">E</button>
+          <button id="tecla-F" onclick="verificaLetraEscolhida('F')">F</button>
+          <button id="tecla-G" onclick="verificaLetraEscolhida('G')">G</button>
+          <button id="tecla-H" onclick="verificaLetraEscolhida('H')">H</button>
+          <button id="tecla-I" onclick="verificaLetraEscolhida('I')">I</button>
+        </div>
+        <div class="teclas">
+          <button id="tecla-J" onclick="verificaLetraEscolhida('J')">J</button>
+          <button id="tecla-K" onclick="verificaLetraEscolhida('K')">K</button>
+          <button id="tecla-L" onclick="verificaLetraEscolhida('L')">L</button>
+          <button id="tecla-M" onclick="verificaLetraEscolhida('M')">M</button>
+          <button id="tecla-N" onclick="verificaLetraEscolhida('N')">N</button>
+          <button id="tecla-O" onclick="verificaLetraEscolhida('O')">O</button>
+          <button id="tecla-P" onclick="verificaLetraEscolhida('P')">P</button>
+          <button id="tecla-Q" onclick="verificaLetraEscolhida('Q')">Q</button>
+          <button id="tecla-R" onclick="verificaLetraEscolhida('R')">R</button>
+        </div>
+        <div class="teclas">
+          <button id="tecla-S" onclick="verificaLetraEscolhida('S')">S</button>
+          <button id="tecla-T" onclick="verificaLetraEscolhida('T')">T</button>
+          <button id="tecla-U" onclick="verificaLetraEscolhida('U')">U</button>
+          <button id="tecla-V" onclick="verificaLetraEscolhida('V')">V</button>
+          <button id="tecla-W" onclick="verificaLetraEscolhida('W')">W</button>
+          <button id="tecla-X" onclick="verificaLetraEscolhida('X')">X</button>
+          <button id="tecla-Y" onclick="verificaLetraEscolhida('Y')">Y</button>
+          <button id="tecla-Z" onclick="verificaLetraEscolhida('Z')">Z</button>
+          <button id="tecla-Ç" onclick="verificaLetraEscolhida('Ç')">Ç</button>
+        </div>
+      </div>
+      <div id="categoria"></div>
+      <div class="botoes-addpalavra">
+        <button class="btn-primario btn-salvaresair btnReiniciar" id="reiniciarbtn" onclick="reiniciar()">Novo jogo</button>
+        <button class="btn-secundario btn-cancelar" onclick="returnToMenu()">
+          desistir
+        </button>
+
+      </div>
+    </section>
+    <section class="new-word-section hide">
+      <div class="form">
+        <h2>Digite a sua <strong>palavra</strong></h2>
+
+        <input id="textarea" class="inputPalavra" placeholder="digite aqui..."></input>
+      </div>
+      <div class="warning">
+        <p><span>⚠</span> Máximo de 8 letras.</p>
+      </div>
+      <div class="form">
+        <h2>Digite a sua <strong>categoria</strong></h2>
+
+        <input id="textarea" class="inputCategoria" placeholder="digite aqui..."></input>
+      </div>
+      <div class="botoes-addpalavra">
+        <button type="submit" class="btn-primario btn-salvaresair" onclick="enviar()">
+          salvar e sair
+        </button>
+
+
+        <button class="btn-secundario btn-cancelar" onclick="returnToMenu()">
+          cancelar
+        </button>
+
+      </div>
+    </section>
+    <section class="victory-section hide">
+      <h1>Você ganhou!</h1>
+      <div class="botoes-addpalavra">
+        <button class="btn-primario btn-salvaresair btnReiniciar reiniciarbtn" id="reiniciarbtn" onclick="reiniciar()">Novo jogo</button>
+      </div>
+    </section>
+    <section class="defeat-section hide">
+      <h1>Você perdeu!</h1>
+      <div class="botoes-addpalavra">
+        <button class="btn-primario btn-salvaresair btnReiniciar reiniciarbtn" id="reiniciarbtn" onclick="reiniciar()">Novo jogo</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Desenvolvido por José Iêdo</p>
+    <div class="icones">
+      <a href="https://www.linkedin.com/in/joseiedo/" target="_blank">
+        <img class="redesocial-footer" src="img/linkedin.svg" alt="linkedin" />
+      </a>
+      <a href="https://github.com/joseiedo" target="_blank">
+        <img class="github" src="img/github.svg" alt="github" />
+      </a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

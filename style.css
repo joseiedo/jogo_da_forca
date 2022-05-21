@@ -287,7 +287,7 @@ footer {
   height: 50px;
   margin: 1px;
   border-radius: 10px;
-  border: 3px solid var(--bg-secundary);
+  border: 2px solid var(--bg-secundary);
   color: var(--bg-color);
   background: var(--white);
   font-size: 2rem;
@@ -301,15 +301,28 @@ footer {
 }
 
 .victory-section h1 {
+  margin-bottom: 0px;
   text-transform: uppercase;
-  color: #57caff;
+  color: #22d655;
   font-size: 5.875rem;
+}
+
+.victory-section p {
+  margin-bottom: 20px;
+  color: var(--white);
 }
 
 .defeat-section h1 {
   text-transform: uppercase;
-  color: #ca3915;
+  margin-bottom: 0px;
+
+  color: #ff4242;
   font-size: 5.875rem;
+}
+
+.defeat-section p {
+  margin-bottom: 20px;
+  color: var(--white);
 }
 
 @media (max-width: 800px) {
@@ -361,9 +374,19 @@ footer {
 
 @media (max-width: 500px) {
   .teclas button {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    border: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .teclas button {
     width: 40px;
     height: 40px;
     font-size: 1.5rem;
+    border: 1px;
   }
 }
 

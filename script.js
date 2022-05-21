@@ -87,8 +87,9 @@ function verificaLetraEscolhida(letra) {
 }
 
 function mudarStyleLetra(tecla) {
-  document.getElementById(tecla).style.background = "#303841";
-  document.getElementById(tecla).style.color = "#ca3116";
+  document.getElementById(tecla).style.background = "#8A0B0B";
+  document.getElementById(tecla).style.border = "#d72";
+  document.getElementById(tecla).style.color = "#eee";
 }
 
 function comparalistas(letra) {
@@ -190,17 +191,24 @@ function reiniciar() {
 
 function removeCoracao() {
   const lastHeart = hearts.lastElementChild;
-  lastHeart.src = "./img/heart-death.gif";
+  let qntdHearts = hearts.childElementCount;
 
-  setTimeout(() => {
-    hearts.removeChild(lastHeart);
-  }, 2500);
+  if (qntdHearts > tentativas) {
+    hearts.children[tentativas].src = "./img/heart-death.gif";
+    setTimeout(() => {
+      hearts.removeChild(hearts.lastElementChild);
+    }, 2500);
+    qntdHearts = qntdHearts - 1;
+  }
+
+  console.log(tentativas);
+  console.log(qntdHearts);
 }
 
 function enviar() {
   if (!isNaN(inputPalavra.value)) {
     inputPalavra.value = "";
-    inputPalavra.placeholder = "APENAS LETRAS PERMITIDAS.";
+    inputPalavra.placeholder = "APENAS LETRAS.";
     inputPalavra.focus();
     return false;
   }

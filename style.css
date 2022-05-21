@@ -233,22 +233,41 @@ footer {
   gap: 5px;
 }
 
+#nome-categoria {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+}
+
 #categoria {
   text-transform: uppercase;
   text-align: center;
+  margin-top: 0px;
   margin-bottom: 20px;
-  color: var(--main-color);
+  font-size: 4rem;
+  color: var(--white);
   font-weight: bold;
 }
 
 .letras {
-  width: 16px;
+  width: 2rem;
   color: var(--white);
   font-weight: bold;
   text-align: center;
-  border-bottom: 2px solid var(--main-color);
+  font-size: 2rem;
+  border-bottom: 5px solid var(--main-color);
   border-radius: 2px;
+
   padding: 2px;
+}
+#hearts {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#hearts img {
+  width: 40px;
+  height: 30px;
 }
 
 #teclado {
@@ -264,14 +283,14 @@ footer {
   max-width: initial;
   font-size: initial;
   border-radius: initial;
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   margin: 1px;
-  border-radius: 3px;
-  border: 1px solid var(--bg-secundary);
+  border-radius: 10px;
+  border: 3px solid var(--bg-secundary);
   color: var(--bg-color);
   background: var(--white);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: "Poppins";
   font-weight: 900;
   margin-bottom: 5px;
@@ -281,10 +300,63 @@ footer {
   cursor: not-allowed;
 }
 
-.vitory-section h1 {
+.victory-section h1 {
   text-transform: uppercase;
-  color: #e74e0d;
+  color: #57caff;
   font-size: 5.875rem;
+}
+
+.defeat-section h1 {
+  text-transform: uppercase;
+  color: #ca3915;
+  font-size: 5.875rem;
+}
+
+@media (max-width: 800px) {
+  .teclas button {
+    width: 58px;
+    height: 58px;
+    border-radius: 5px;
+    font-size: 2rem;
+  }
+
+  .letras {
+    width: 1rem;
+    color: var(--white);
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 2px solid var(--main-color);
+    border-radius: 2px;
+    padding: 2px;
+  }
+  .forca {
+    width: 300px;
+  }
+
+  #hearts img {
+    width: 30px;
+    height: 25px;
+  }
+
+  #categoria {
+    font-size: 2rem;
+  }
+
+  #nome-categoria {
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .teclas button {
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 500px) {
@@ -297,16 +369,16 @@ footer {
 
 @media (max-width: 420px) {
   .teclas button {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     font-size: 1rem;
   }
 }
 
 @media (max-width: 370px) {
   .teclas button {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     font-size: 0.8rem;
   }
 }

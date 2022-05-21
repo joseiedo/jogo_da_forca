@@ -8,7 +8,8 @@ const botaoSalvar = document.querySelector(".btn-salvarpalavra");
 let inputPalavra = document.querySelector(".inputPalavra");
 let inputCategoria = document.querySelector(".inputCategoria");
 
-let isGameRunning = false;
+const hearts = document.getElementById("hearts");
+
 const maximoLenPalavra = 8;
 let actualPage = menuSection;
 let tentativas = 6;
@@ -39,9 +40,6 @@ const palavras = [
 ];
 
 //-------
-
-if (isGameRunning == true) {
-}
 
 criarPalavraSecreta();
 function criarPalavraSecreta() {
@@ -89,8 +87,8 @@ function verificaLetraEscolhida(letra) {
 }
 
 function mudarStyleLetra(tecla) {
-  document.getElementById(tecla).style.background = "#C71585";
-  document.getElementById(tecla).style.color = "#ffffff";
+  document.getElementById(tecla).style.background = "#303841";
+  document.getElementById(tecla).style.color = "#ca3116";
 }
 
 function comparalistas(letra) {
@@ -98,6 +96,7 @@ function comparalistas(letra) {
   if (pos < 0) {
     tentativas--;
     carregaImagemForca();
+    removeCoracao();
     if (tentativas == 0) {
       goToDefeatpage();
     }
@@ -171,11 +170,6 @@ function returnToMenu() {
   actualPage = menuSection;
 }
 
-function iniciarJogo() {
-  isGameRunning = true;
-  criarTracoDaLetra();
-}
-
 function goToDefeatpage() {
   actualPage.classList.add("hide");
   defeatPage.classList.remove("hide");
@@ -192,6 +186,15 @@ function goToVictoryPage() {
 
 function reiniciar() {
   location.reload();
+}
+
+function removeCoracao() {
+  const lastHeart = hearts.lastElementChild;
+  lastHeart.src = "./img/heart-death.gif";
+
+  setTimeout(() => {
+    hearts.removeChild(lastHeart);
+  }, 2500);
 }
 
 function enviar() {
@@ -221,6 +224,7 @@ function enviar() {
         categoria: inputCategoria.value,
       })
     );
+
     inputPalavra.value = "";
     inputCategoria.value = "";
     returnToMenu();

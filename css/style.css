@@ -431,6 +431,14 @@ footer {
     width: 70vw;
   }
 
+  .victory-section h1 {
+    font-size: 4rem;
+  }
+
+  .defeat-section h1 {
+    font-size: 4rem;
+  }
+
   #textarea {
     width: 80vw;
   }

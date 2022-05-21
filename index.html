@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Jogo da forca - José Iêdo</title>
 </head>
 
@@ -37,37 +37,37 @@
       </div>
       <div id="teclado">
         <div class="teclas">
-          <button id="tecla-A" onclick="verificaLetraEscolhida('A')">A</button>
-          <button id="tecla-B" onclick="verificaLetraEscolhida('B')">B</button>
-          <button id="tecla-C" onclick="verificaLetraEscolhida('C')">C</button>
-          <button id="tecla-D" onclick="verificaLetraEscolhida('D')">D</button>
-          <button id="tecla-E" onclick="verificaLetraEscolhida('E')">E</button>
-          <button id="tecla-F" onclick="verificaLetraEscolhida('F')">F</button>
-          <button id="tecla-G" onclick="verificaLetraEscolhida('G')">G</button>
-          <button id="tecla-H" onclick="verificaLetraEscolhida('H')">H</button>
-          <button id="tecla-I" onclick="verificaLetraEscolhida('I')">I</button>
+          <button id="tecla-A" onclick="checkChosenLetter('A')">A</button>
+          <button id="tecla-B" onclick="checkChosenLetter('B')">B</button>
+          <button id="tecla-C" onclick="checkChosenLetter('C')">C</button>
+          <button id="tecla-D" onclick="checkChosenLetter('D')">D</button>
+          <button id="tecla-E" onclick="checkChosenLetter('E')">E</button>
+          <button id="tecla-F" onclick="checkChosenLetter('F')">F</button>
+          <button id="tecla-G" onclick="checkChosenLetter('G')">G</button>
+          <button id="tecla-H" onclick="checkChosenLetter('H')">H</button>
+          <button id="tecla-I" onclick="checkChosenLetter('I')">I</button>
         </div>
         <div class="teclas">
-          <button id="tecla-J" onclick="verificaLetraEscolhida('J')">J</button>
-          <button id="tecla-K" onclick="verificaLetraEscolhida('K')">K</button>
-          <button id="tecla-L" onclick="verificaLetraEscolhida('L')">L</button>
-          <button id="tecla-M" onclick="verificaLetraEscolhida('M')">M</button>
-          <button id="tecla-N" onclick="verificaLetraEscolhida('N')">N</button>
-          <button id="tecla-O" onclick="verificaLetraEscolhida('O')">O</button>
-          <button id="tecla-P" onclick="verificaLetraEscolhida('P')">P</button>
-          <button id="tecla-Q" onclick="verificaLetraEscolhida('Q')">Q</button>
-          <button id="tecla-R" onclick="verificaLetraEscolhida('R')">R</button>
+          <button id="tecla-J" onclick="checkChosenLetter('J')">J</button>
+          <button id="tecla-K" onclick="checkChosenLetter('K')">K</button>
+          <button id="tecla-L" onclick="checkChosenLetter('L')">L</button>
+          <button id="tecla-M" onclick="checkChosenLetter('M')">M</button>
+          <button id="tecla-N" onclick="checkChosenLetter('N')">N</button>
+          <button id="tecla-O" onclick="checkChosenLetter('O')">O</button>
+          <button id="tecla-P" onclick="checkChosenLetter('P')">P</button>
+          <button id="tecla-Q" onclick="checkChosenLetter('Q')">Q</button>
+          <button id="tecla-R" onclick="checkChosenLetter('R')">R</button>
         </div>
         <div class="teclas">
-          <button id="tecla-S" onclick="verificaLetraEscolhida('S')">S</button>
-          <button id="tecla-T" onclick="verificaLetraEscolhida('T')">T</button>
-          <button id="tecla-U" onclick="verificaLetraEscolhida('U')">U</button>
-          <button id="tecla-V" onclick="verificaLetraEscolhida('V')">V</button>
-          <button id="tecla-W" onclick="verificaLetraEscolhida('W')">W</button>
-          <button id="tecla-X" onclick="verificaLetraEscolhida('X')">X</button>
-          <button id="tecla-Y" onclick="verificaLetraEscolhida('Y')">Y</button>
-          <button id="tecla-Z" onclick="verificaLetraEscolhida('Z')">Z</button>
-          <button id="tecla-Ç" onclick="verificaLetraEscolhida('Ç')">Ç</button>
+          <button id="tecla-S" onclick="checkChosenLetter('S')">S</button>
+          <button id="tecla-T" onclick="checkChosenLetter('T')">T</button>
+          <button id="tecla-U" onclick="checkChosenLetter('U')">U</button>
+          <button id="tecla-V" onclick="checkChosenLetter('V')">V</button>
+          <button id="tecla-W" onclick="checkChosenLetter('W')">W</button>
+          <button id="tecla-X" onclick="checkChosenLetter('X')">X</button>
+          <button id="tecla-Y" onclick="checkChosenLetter('Y')">Y</button>
+          <button id="tecla-Z" onclick="checkChosenLetter('Z')">Z</button>
+          <button id="tecla-Ç" onclick="checkChosenLetter('Ç')">Ç</button>
         </div>
       </div>
       <div id="hearts">
@@ -80,8 +80,8 @@
 
       </div>
       <div class="botoes-addpalavra">
-        <button class="btn-primario btn-salvaresair btnReiniciar" id="reiniciarbtn" onclick="reiniciar()">Novo jogo</button>
-        <button class="btn-secundario btn-cancelar" onclick="reiniciar()">
+        <button class="btn-primario btn-stylev2 btnReiniciar" id="reiniciarbtn" onclick="reload()">Novo jogo</button>
+        <button class="btn-secundario btn-cancelar" onclick="reload()">
           desistir
         </button>
 
@@ -103,7 +103,7 @@
         <p><span>⚠</span> Máximo de 8 letras por palavra.</p>
       </div>
       <div class="botoes-addpalavra">
-        <button type="submit" class="btn-primario btn-salvaresair" onclick="enviar()">
+        <button type="submit" class="btn-primario btn-stylev2" onclick="sendWord()">
           salvar e sair
         </button>
 
@@ -118,7 +118,7 @@
       <h1>Você ganhou!</h1>
       <p>Após comemorar, comece um novo jogo!</p>
       <div class="botoes-addpalavra">
-        <button class="btn-primario btn-salvaresair btnReiniciar reiniciarbtn" id="reiniciarbtn" onclick="reiniciar()">Novo jogo</button>
+        <button class="btn-primario btn-stylev2" onclick="reload()">Novo jogo</button>
       </div>
     </section>
     <section class="defeat-section hide">
@@ -126,7 +126,7 @@
       <p>mas calma, comece um novo jogo! Agora vai dar certo :D</p>
 
       <div class="botoes-addpalavra">
-        <button class="btn-primario btn-salvaresair btnReiniciar reiniciarbtn" id="reiniciarbtn" onclick="reiniciar()">Novo jogo</button>
+        <button class="btn-primario btn-stylev2 " onclick="reload()">Novo jogo</button>
       </div>
     </section>
   </main>
@@ -141,7 +141,11 @@
       </a>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script src="./js/words.js"></script>
+  <script src="./js/variables.js"></script>
+  <script src="./js/changepages.js"></script>
+  <script src="./js/script.js"></script>
+
 </body>
 
 </html>

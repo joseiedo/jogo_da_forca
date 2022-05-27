@@ -37,14 +37,20 @@ function showWordInScreen() {
 function checkChosenLetter(letra) {
   document.getElementById("tecla-" + letra).disabled = true;
   if (attempts > 0) {
-    changeLetterStyle("tecla-" + letra);
+    // changeLetterStyle("tecla-" + letra);
     compareLetter(letra);
     showWordInScreen();
   }
 }
 
-function changeLetterStyle(tecla) {
-  document.getElementById(tecla).style.background = "#8A0B0B";
+function letraErrada(tecla) {
+  document.getElementById(tecla).style.background = "red";
+  document.getElementById(tecla).style.border = "#d72";
+  document.getElementById(tecla).style.color = "#eee";
+}
+
+function letraCerta(tecla) {
+  document.getElementById(tecla).style.background = "green";
   document.getElementById(tecla).style.border = "#d72";
   document.getElementById(tecla).style.color = "#eee";
 }
@@ -54,10 +60,12 @@ function compareLetter(letra) {
   if (pos < 0) {
     attempts--;
     loadForca();
+    letraErrada("tecla-" + letra);
     if (attempts == 0) {
       goToDefeatpage();
     }
   } else {
+    letraCerta("tecla-" + letra);
     for (i = 0; i < secretWord.length; i++) {
       if (secretWord[i] == letra) {
         dynamicList[i] = letra;

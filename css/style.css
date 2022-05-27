@@ -407,9 +407,6 @@ footer {
 }
 
 @media (max-width: 360px) {
-  main {
-    margin-top: 60px;
-  }
   h2 {
     font-size: 1.3rem;
   }

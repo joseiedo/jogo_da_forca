@@ -54,7 +54,6 @@ function compareLetter(letra) {
   if (pos < 0) {
     attempts--;
     loadForca();
-    removeHeart();
     if (attempts == 0) {
       goToDefeatpage();
     }
@@ -106,22 +105,6 @@ function loadForca() {
       img.setAttribute("src", "./img/Vectorforca.svg");
       break;
   }
-}
-
-function removeHeart() {
-  const lastHeart = hearts.lastElementChild;
-  let qntdHearts = hearts.childElementCount;
-
-  if (qntdHearts > attempts) {
-    hearts.children[attempts].src = "./img/heart-death.gif";
-    setTimeout(() => {
-      hearts.removeChild(hearts.lastElementChild);
-    }, 2500);
-    qntdHearts = qntdHearts - 1;
-  }
-
-  console.log(attempts);
-  console.log(qntdHearts);
 }
 
 function sendWord() {
